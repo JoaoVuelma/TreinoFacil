@@ -127,8 +127,7 @@ let exercicios = {
         descricao: 'A prancha é um exercício isométrico que fortalece o core, melhorando a estabilidade e a postura.',
         link: 'https://vitat.com.br/prancha-abdominal/',
         video:'https://www.youtube.com/embed/qNRqGqESAWU'
-    },
-    // Adicione mais exercícios conforme necessário
+    }
 };
 function pesquisarExercicio() {
     const exercicio = document.getElementById('pesquisaExercicio').value.toLowerCase();
