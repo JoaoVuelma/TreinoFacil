@@ -1,14 +1,12 @@
 
 
 function montarPlanilhaDeTreino() {
-    const nivel = document.getElementById('nivel').value;
     const tipoTreino = document.getElementById('tipoTreino').value;
     let resultado = "";
   
     switch(tipoTreino) {
       case 'forca':
           resultado += "<h3>Treino de Força</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Aumentar a força máxima dos músculos.</p>";
           resultado += "<p>Tempo Médio: 60-90 minutos</p>";
           resultado += "<p>Séries e Repetições: 3-4 séries de 6-8 repetições</p>";
@@ -22,7 +20,6 @@ function montarPlanilhaDeTreino() {
           break;
       case 'hipertrofia':
           resultado += "<h3>Treino de Hipertrofia</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Aumentar a massa muscular.</p>";
           resultado += "<p>Tempo Médio: 60-90 minutos</p>";
           resultado += "<p>Séries e Repetições: 3-4 séries de 8-12 repetições</p>";
@@ -31,7 +28,6 @@ function montarPlanilhaDeTreino() {
           break;
       case 'resistencia':
           resultado += "<h3>Treino de Resistência Muscular</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Aumentar a capacidade dos músculos de realizar um esforço prolongado.</p>";
           resultado += "<p>Tempo Médio: 45-60 minutos</p>";
           resultado += "<p>Séries e Repetições: 3-4 séries de 15-20 repetições</p>";
@@ -42,7 +38,6 @@ function montarPlanilhaDeTreino() {
           break;
       case 'funcional':
           resultado += "<h3>Treino Funcional</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Melhorar a coordenação, equilíbrio e estabilidade.</p>";
           resultado += "<p>Tempo Médio: 45-60 minutos</p>";
           resultado += "<p>Séries e Repetições: 3-4 séries de 12-15 repetições</p>";
@@ -54,7 +49,6 @@ function montarPlanilhaDeTreino() {
           break;
       case 'hiit':
           resultado += "<h3>Treino HIIT (High-Intensity Interval Training)</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Queimar calorias e melhorar a capacidade cardiovascular.</p>";
           resultado += "<p>Tempo Médio: 30-45 minutos</p>";
           resultado += "<p>Séries e Repetições: Intervalos de 30 segundos de esforço máximo e 30 segundos de descanso, por 15-20 minutos</p>";
@@ -65,7 +59,6 @@ function montarPlanilhaDeTreino() {
           break;
       case 'definicao':
           resultado += "<h3>Treino de Definição</h3>";
-          resultado += "<p>Nível: " + nivel + "</p>";
           resultado += "<p>Objetivo: Reduzir a gordura corporal e definir os músculos.</p>";
           resultado += "<p>Tempo Médio: 60-75 minutos</p>";
           resultado += "<p>Séries e Repetições: Combinação de 3-4 séries de 10-15 repetições de força e 30-40 minutos de cardio</p>";
