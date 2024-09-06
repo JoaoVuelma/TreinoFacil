@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title src="logofacil (1).png" type="img">Treinos Rápidos</title>
+  <link rel="icon" href="logofacil (1).png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- Video de fundo -->
+  <div class="video-background">
+    <video autoplay muted loop id="videoBG">
+      <source src="videoplayback.mp4" type="video/mp4">
+      Seu navegador não suporta a reprodução de vídeo.
+    </video>
+    <!-- Camada de sombra -->
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navbar transparente -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: transparent;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="logofacil (1).png" alt="Logotipo" class="img-fluid logo-responsive">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="color: aliceblue;" href="#como-funciona"><i></i>Como Funciona ?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: aliceblue;" href="#treino-form"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-arms-up" viewBox="0 0 16 16">
+              <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+              <path d="m5.93 6.704-.846 8.451a.768.768 0 0 0 1.523.203l.81-4.865a.59.59 0 0 1 1.165 0l.81 4.865a.768.768 0 0 0 1.523-.203l-.845-8.451A1.5 1.5 0 0 1 10.5 5.5L13 2.284a.796.796 0 0 0-1.239-.998L9.634 3.84a.7.7 0 0 1-.33.235c-.23.074-.665.176-1.304.176-.64 0-1.074-.102-1.305-.176a.7.7 0 0 1-.329-.235L4.239 1.286a.796.796 0 0 0-1.24.998l2.5 3.216c.317.316.475.758.43 1.204Z"/>
+            </svg> Sobre seu treino</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: aliceblue;" href="#pesquisa-form"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-pulse-fill" viewBox="0 0 16 16">
+              <path d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"/>
+              <path d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"/>
+            </svg> Pesquisar Exercício</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-10">
+    <!-- Seção "Como Funciona" -->
+    <div class="row full-screen-section min-vh-100" id="como-funciona">
+      <div class="col-12">
+        <div class="section-content text-center">
+          <h2 style="color: aliceblue;">Como Funciona</h2>
+          <p style="color: aliceblue;">Treinos Rápidos é uma plataforma para pesquisar sobre seus treinos de maneira simples e eficaz.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção "Pesquisar Exercício" -->
+    <div class="row full-screen-section min-vh-100 d-flex align-items-center justify-content-center" id="pesquisa-form">
+      <div class="col-4">
+        <div class="section-content">
+          <h2 class="text-center">Pesquisar Exercício</h2>
+          <form>
+            <div class="form-group">
+              <label for="pesquisaExercicio">Nome do Exercício:</label>
+              <input type="text" id="pesquisaExercicio" name="pesquisaExercicio" class="form-control" placeholder="Digite o nome do exercício">
+            </div>
+            <button type="button" class="btn btn-primary mt-3" onclick="pesquisarExercicio()">Pesquisar</button>
+          </form>
+          <div id="resultadoExercicio" class="row mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção "Criar Novo Treino" -->
+    <div class="row full-screen-section min-vh-100 d-flex align-items-center justify-content-center mt-10" id="treino-form">
+      <div class="col-4">
+        <div class="section-content">
+          <h2 class="text-center">Informações sobre o Treino</h2>
+          <form>
+            <div class="form-group">
+              <label for="nivel">Nível:</label>
+              <select id="nivel" name="nivel" class="form-control">
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="tipoTreino">Tipo de Treino:</label>
+              <select id="tipoTreino" name="tipoTreino" class="form-control">
+                <option value="forca">Treino de Força</option>
+                <option value="hipertrofia">Treino de Hipertrofia</option>
+                <option value="resistencia">Treino de Resistência Muscular</option>
+                <option value="funcional">Treino Funcional</option>
+                <option value="hiit">Treino HIIT</option>
+                <option value="definicao">Treino de Definição</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary mt-3 mb-3" onclick="montarPlanilhaDeTreino()">Pesquisar</button>
+          </form>
+          <div id="exercicios-list" class="row m-10"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <!-- Rodapé -->
+  <footer class="footer text-white text-center py-3 mt-5" style="background-color: transparent;">
+    <p>&copy; 2024 Treinos Rápidos. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
